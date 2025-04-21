@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-demo
+  description: Demo Backstage app for internal developer portal POC
+  tags:
+    - backstage
+    - portal
+spec:
+  type: website
+  lifecycle: experimental
+  owner: user:ank112
