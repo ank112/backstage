@@ -1,12 +1,11 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
-  name: backstage-demo
-  description: Demo Backstage app for internal developer portal POC
-  tags:
-    - backstage
-    - portal
+  name: petstore-api
+  description: Dummy Pet Store API for demo
 spec:
-  type: website
+  type: openapi
   lifecycle: experimental
-  owner: user:ank112
+  owner: team-demo
+  definition:
+    $url: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml
