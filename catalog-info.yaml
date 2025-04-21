@@ -1,16 +1,32 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
-  name: demo-service
-  description: A dummy service to demo Backstage catalog features.
+  name: demo-api
+  description: A dummy REST API for demonstration purposes.
   tags:
     - demo
-    - example
-  annotations:
-    github.com/project-slug: ank112/backstage
-    backstage.io/techdocs-ref: dir:.
+    - rest
 spec:
-  type: service
+  type: openapi
   lifecycle: experimental
   owner: team-demo
-
+  definition:
+    $text: |
+      openapi: 3.0.0
+      info:
+        title: Demo API
+        version: 1.0.0
+      paths:
+        /hello:
+          get:
+            summary: Returns a greeting
+            responses:
+              '200':
+                description: A successful response
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        message:
+                          type: string
